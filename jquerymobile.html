@@ -1,0 +1,348 @@
+<!DOCTYPE HTML> 
+<HTML> 
+ 
+ <HEAD> 
+  <TITLE> New Document </TITLE> 
+  <meta name="viewport" content="width=device-width,initial-scale=1"/> 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+ </HEAD>
+
+  <BODY> 
+    
+    <!-- main page -->
+    <div data-role = "page" id="menu">
+      <div data-role = "header">
+        <h1> Menu </h1>        
+      </div>
+      <div role = "main" class = "ui-content">
+        <ul dat-role ="listview" data-inset = "true">
+          <li data-role = "list-divider">Basis</li>
+          <li><a href="#headerFooter"> header footer  </a> </li>
+          <li><a href="#navigationbar"> navigation bar </a> </li>
+          <li><a href="#dialogpage" data-transition="fade" > popup dialog and transition  </a> </li>
+          <li><a href="#buttonpage" > Button and Icon  </a> </li>
+          <li><a href="#collapsibles" > Collapsibles  </a> </li>           
+
+          <li data-role = "list-divider">Views</li>  
+          <li><a href="#listpage"> list page </a> </li>  
+          <li><a href="#formpage"> form page </a> </li>
+          <li><a href="#themepage"> theme </a> </li>
+          
+
+        </ul>
+      </div>
+      <div data-role = "footer" data-position = "fixed">
+        <h4> copy right</h4>
+      </div>
+    </div>
+
+    <!-- header & footer page -->
+    <div data-role="page" id="headerFooter">
+       <!-- 页眉可包含一个或两个按钮，然而页脚没有限制。-->
+       <div data-role="header" data-position="inline">
+          <a href="#" data-role="button" data-icon="home">Home</a>
+          <h1>Header and footer</h1>
+          <a href="#" data-role="button" data-icon="search">Search</a>
+      </div>
+      <!-- 按钮居中设置class="ui-btn"-->
+      <!-- Inline - 默认。页眉和页脚与页面内容位于行内
+            Fixed - 页面和页脚会留在页面顶部和底部。
+            Fullscreen - 与 fixed 类似;页面和页脚会留在页面顶部和底部,但是点击会消失全屏显示内容-->
+      <div data-role="footer" data-position = "fixed" class="ui-btn">
+        <a href="#" data-role="button" data-icon="plus">Link1</a>
+        <a href="#" data-role="button" data-icon="plus">Link2</a>
+        <a href="#" data-role="button" data-icon="plus">Link3</a>
+      </div>
+    </div><!-- /page -->
+
+
+    <!-- navigation bar page -->
+    <div data-role="page" id="navigationbar">
+        <div data-role="navbar">
+           <ul>
+              <!--每个按钮设置“被选”外观，以表示用户正在浏览该页面。"ui-state-persist" 类，以及 "ui-btn-active"类-->
+              <li><a href="#" class="ui-btn-active">One</a></li>
+              <li><a href="#">Two</a></li>
+           </ul>
+        </div>
+    </div><!-- /page -->
+
+
+    <!-- list page -->
+    <div data-role="page" id="listpage">
+      <div data-role="header" data-position="fixed">
+            <h1>Navigation</h1>
+         </div><!-- /header -->
+         <div data-role="content" >
+            <!--如需为列表添加圆角和外边距，请使用 data-inset="true" 属性：-->
+            <ul data-role="listview" data-dividertheme="d" style="margin-top: 0;" data-inset="true">
+               <li data-role="list-divider">Section one</li>
+               <li><a href="#">one</a></li>
+               <li><a href="#">two</a></li>
+               
+               <li data-role="list-divider">Section two</li>
+               <li><a href="#">
+                  <img src="https://www.baidu.com/img/baidu_jgylogo3.gif">
+                  <h2>Baidu</h2>
+                  <p>www.baidu.com</p>  
+               </a></li>
+               <li><a href="#">
+                TWO <span class="ui-li-count">888</span>
+                </a></li>
+                <li data-icon="minus"><a href="#">
+                Three</span>
+                </a></li>
+
+                <li data-role="list-divider">Wendesday Jan.1st, 2015 <span class="ui-li-count">2</span></li>   
+                <li><a href="#">   
+                  <h2>John</h2>
+                  <p><b>To Peter Griffin</b></p>
+                  <p>Well, Mr. Griffin, I've looked into physical results.</p>
+                  <p>Ah, Mr. Griffin, I'm not quite sure how to say this. Kim Bassinger? Bass singer? Bassinger?</p>
+                  <p class="ui-li-aside">Re: Appointment</p></a>
+                </li>
+                <li><a href="#">
+                  <h2>Glen Quagmire</h2>
+                  <p>Remember me this weekend!</p>
+                  <p class="ui-li-aside">Re: Camping</p></a>
+                </li>
+
+            </ul>
+
+            <!--列表是字母顺序的 data-autodividers="true" 属性自动组合-->
+            <!--列表中添加搜索框，请使用 data-filter="true" 属性-->
+            <ol data-role="listview" data-dividertheme="d" style="margin-top: 0;" data-autodividers="true"
+            data-filter="true" data-filter-placeholder="Search name...">
+                <li><a href="#">Adele</a></li>
+                <li><a href="#">Agnes</a></li>
+                <li><a href="#">Billy</a></li>
+                <li><a href="#">Bob</a></li>
+              </ul>
+            </ol>
+
+         </div><!-- /content -->
+      <div data-role="footer" data-position="fixed">
+      </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <!-- dialog page -->
+    <div data-role="page" data-dialog="true" id="dialogpage">
+      <div data-role="main" class="ui-content">
+        <h1>This is a dialog</h1>
+        <!-- fade 淡入 , flip从后向前翻转 , flow  抛出当前页 ,pop  像弹出窗口转入, slide  从右向左滑动, slidefade 从右向左滑动并淡入
+        slideup 从下到上滑动到下一页, slidedown 从上到下滑动到下一页, turn  转向下一页, none  无过渡效果。-->
+        <a href="#menu" data-transition="slide" data-direction="reverse">Back to menu</a>
+
+        <!-- 2中实现  -->
+        <a href="#popup" data-rel="popup">
+        <div data-role="popup" id="myPopup" class="ui-content">
+
+
+
+
+        <!-- popup page -->
+            <!--data-dismissible="false" 禁用点击弹窗之外的区域关闭弹窗-->
+            <!-- 使用 data-position-to 属性控制弹窗的位置 ，data-position-to="window" 弹窗在窗口居中显示 ，
+            data-position-to="#myId" 弹窗显示在#id 元素上，data-position-to="origin" 默认。弹窗显示在点击的元素上。 -->
+            <!--弹窗方向小边框可以使用 data-arrow 属性，并指定值 "l" (左边), "t" (顶部), "r" (右边) or "b" (底部): -->
+            <!-- 默认情况下覆盖的背景色的透明的。使用 data-overlay-theme="a" 添加浅色背景，使用 data-overlay-theme="b" 添加深色的覆盖背景 -->
+            <div data-role="page" data-dialog="true" id="popup"  data-dismissible="false" data-position-to="window" data-arrow="l" data-overlay-theme="b">
+                <h1>This is a popup dialog</h1>
+                <!-- 弹窗上添加关闭按钮，按钮上使用 data-rel="back"  -->
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-left"> </a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- buttonpage page -->
+    <div data-role="page" id="buttonpage">
+      <div data-role="header" data-position="fixed">
+            <h1>Button</h1>
+      </div><!-- /header -->
+      <div data-role="content" >
+            <!-- 进行表单提交 -->
+            <button>button Button</button>
+            <input type="button" value="input Button">
+            <!-- 元素在页面间进行链接 -->
+            <a href="#" data-role="button"> a Button</a> 
+
+            <!-- 默认情况下，按钮占满整个屏幕宽度。仅是与内容一样宽的按钮 -->
+            <a href="#" data-role="button" data-inline="true">inline button</a>
+
+            <!-- horizontal 水平组合 ,  vertical 垂直组合 -->
+            <div data-role="controlgroup" data-type="horizontal">   
+              <a href="#" data-role="button">Button 1</a>
+              <a href="#" data-role="button">Button 2</a>
+              <a href="#" data-role="button">Button 3</a>
+            </div>
+
+            <!-- 使用 data-rel="back" 属性,忽略href 值） -->
+            <a href="#" data-role="button" data-rel="back">Back</a>
+
+            <!-- data-icon="search" ( 替代ui-icon-XX) 图标样式，data-iconpos（替代ui-btn-icon-left）-top/right/bottom/left 图标位置  -->
+            <a href="#" data-role="button" data-icon="search" data-iconpos="left">Icon button</a>            
+            <!-- 如果你只想显示图标，可以使用 "notext" 
+                 默认情况下，所有的图标都有一个灰色的圆圈。如果你不需要它，可以在元素中使用 "ui-nodisc-icon" 类
+                 默认情况下，所有图标都是白色的。 如果需要改变图标颜色为黑色，可以在元素添加 "ui-alt-icon"-->
+            <a href="#" data-role="button" data-icon="search" class="ui-btn ui-icon-search ui-btn-icon-notext  ui-nodisc-icon ui-alt-icon">Only Icon Button</a>
+            <!--  data-corners  true | false  规定按钮是否有圆角, data-mini true | false  规定是否是小型按钮, data-shadow true | false  规定按钮是否有阴影。-->
+
+         </div><!-- /content -->         
+      <div data-role="footer" data-position="fixed">
+        <h4>Copy Right</h4>
+      </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+
+    <!-- collapsibles page -->
+    <div data-role="page" id="collapsibles">
+      <div data-role="header" data-position="fixed">
+            <h1>collapsibles</h1>
+         </div><!-- /header -->
+         <div data-role="content" >
+
+           <!--默认地，该内容是关闭的。如需在页面加载时扩展内容，请使用 data-collapsed="false"-->
+           <div data-role="collapsible" data-collapsed="true">
+              <h1>First level-head</h1>
+              <p>First level-content </p>
+              <div data-role="collapsible">
+                <h1>second level-head</h1>
+                <p>second level-content</p>
+              </div>
+            </div>
+
+            <!--当新块被打开时，所有其他块会关闭。创建若干内容块，然后通过 data-role="collapsible-set"-->
+            <div data-role="collapsible-set">
+              <div data-role="collapsible">
+                <h1>First -head</h1>
+                <p>First -content </p>
+              </div>
+              <div data-role="collapsible">
+                <h1>Second -head</h1>
+                <p>Second -content</p>
+              </div>
+            </div>
+            
+         </div><!-- /content -->
+      <div data-role="footer" data-position="fixed">
+        <h4>Copy Right</h4>
+      </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <!-- form page -->
+    <div data-role="page" data-dialog="true" id="formpage">
+      <div data-role="main" class="ui-content">
+
+        <form method="post" action="demoform.asp">
+          <!--如需隐藏 label，请使用类 ui-hidden-accessible。使用 placeholder 属性充当 label -->
+          <label for="fname" class="ui-hidden-accessible">name</label>
+          <input type="text" name="personname" id="fname" placeholder="Name...">
+
+          <!--需要 label 和表单元素在宽屏幕上显示正常，请用带有 data-role="fieldcontain" 属性的 <div> 或 <fieldset> 元素来包装 
+        当页面宽度大于 480px 时，它会自动将 label 与表单控件放置于同一行。当小于 480px 时，label 会被放置于表单元素之上。-->
+          <div data-role="fieldcontain">
+            <label for="bday">Date</label>
+            <input type="date" id="bday">
+
+            <label for="email">Mail</label>
+            <input type="email" id="email" placeholder="Your mail..">
+
+            <label for="info">Additional Information:</label>
+            <textarea name="addinfo" id="info"></textarea>
+
+            <label for="search">Search:</label>
+            <input type="search" name="search" id="search">
+
+            <!--Radio  checked预选 -->
+            <fieldset data-role="controlgroup">
+              <legend>Choose your gender:</legend>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male" checked>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female" value="female"> 
+            </fieldset>
+
+            <!--Checkbox    data-type="horizontal"  or  vertical，checked预选 -->
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <legend>Choose as many favorite colors as you'd like:</legend>
+                <label for="red">Red</label>
+                <input type="checkbox" name="favcolor" id="red" value="red" checked>
+                <label for="green">Green</label>
+                <input type="checkbox" name="favcolor" id="green" value="green">
+                <label for="blue">Blue</label>
+                <input type="checkbox" name="favcolor" id="blue" value="blue"> 
+            </fieldset>
+
+            <label for="day">Choose date</label>
+            <!--使用 jQuery 的自定义选择菜单，data-native-menu="false" 
+                默认单选，multiple 多选
+                selected 预选-->
+            <select name="day" id="day" multiple data-native-menu="false"> 
+              <optgroup label="Weekdays">
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed" selected >Wednesday</option>
+              </optgroup>
+              <optgroup label="Weekends">
+                <option value="sat">Saturday</option>
+                <option value="sun">Sunday</option>
+              </optgroup>
+            </select>
+
+            <label for="points">Points:</label>
+            <input type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="switch">Toggle Switch:</label>
+            <select name="switch" id="switch" data-role="slider">
+              <option value="on" selected>On</option>
+              <option value="off">Off</option>
+            </select>
+
+          </div> 
+        </form>
+
+
+      </div>
+    </div>
+
+    <!-- navigation bar page -->
+    <div data-role="page" id="themepage">
+        <div data-role="main" class="ui-content">
+          <!--
+          a 默认。黑色背景上的白色文本。  
+          b 蓝色背景上的白色文本 / 灰色背景上的黑色文本 
+          c 亮灰色背景上的黑色文本 
+          d 白色背景上的黑色文本  
+          e 橙色背景上的黑色文本
+        -->
+        <!--
+          并用字母名（f-z）来对类进行重命名，然后调整为您喜欢的颜色和字体即可。
+          使用主题类来添加新样式 - 为工具条添加类 ui-bar-(a-z)，并为内容添加类 ui-body-(a-z)
+          <style>
+            .ui-bar-f
+            {
+            color:green;
+            background-color:yellow;
+            }
+            .ui-body-f
+            {
+            font-weight:bold;
+            color:purple;
+            }
+          </style>
+      -->
+          <div data-role="collapsible" data-theme="b" data-content-theme="e">
+            <h1>content</h1>            
+          </div>
+
+        </div>
+    </div><!-- /page -->
+
+          
+
+ </BODY> 
+</HTML> 
